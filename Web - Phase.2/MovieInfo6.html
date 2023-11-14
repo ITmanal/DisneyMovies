@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Disney Movie's </title>
+    <link rel="stylesheet" type="text/css" href="Css.css">
+    <link rel="shortcut icon" href="Posters/marvelicon1.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function render(data) {
+
+            var html = "<div class='commentBox'><div class='leftPanelImg'><img src='Posters/user.png' width='40px' height='40px' alt='User image''/></div><div class='rightPanel'><span>UserName:" + data.name + "</span><div class='date'>Date: " + data.date + "</div><p>The Review: " + data.body + "</p></div><div class='clear'></div></div>";
+
+            $('#container').append(html);
+
+        }
+
+        $(document).ready(function () {
+
+            var coment = [{
+                "name": " Example ",
+                "date": " 01 Jun, 2021 ",
+                "body": " This Is A Sample Review ."
+            }];
+
+            for (var i = 0; i < coment.length; i++) {
+                render(coment[i]);
+
+            }
+
+            $('#addComent').click(function () {
+                var addObj = {
+                    "name": $('#name').val(),
+                    "date": $('#date').val(),
+                    "body": $('#bodyText').val()
+                };
+
+                coment.push(addObj);
+                render(addObj);
+                $('#name').val('');
+                $('#date').val('dd/mm/yyyy');
+                $('#bodyText').val('');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+    </header>
+
+    <div class="bar">
+
+        <nav style="position:relative; center:22%;">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Movie.html">Movie's</a></li>
+                <li><a href="Aboutus.html"> About Us </a></li>
+                <li><a href="ContactUs.html"> Contact Us </a></li>
+                <li><a href="ControlPanel.html"> Control Panel </a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <p class="hed1"> Disney Movie's Website </p>
+
+    <hr>
+    <hr>
+    <hr>
+    <div class="bor4">
+        <div class='form'>
+
+            <h1
+                style="text-align: center; color: black; font-family: fantasy; font-size: 30px; text-shadow: -2px 2px 6px gray">
+                Add Review </h1>
+            <span
+                style="text-align: center; color: black; font-family: fantasy; font-size: 20px; text-shadow: -2px 2px 6px gray">
+                Name: </span>
+            <input type="text" id="name" placeholder="username"><br>
+            <span
+                style="text-align: center; color: black; font-family: fantasy; font-size: 20px; text-shadow: -2px 2px 6px gray">
+                Date:</span>
+            <input type="date" id="date" /><br>
+            <hr>
+            <span
+                style="text-align: center; color: black; font-family: fantasy; font-size: 20px; text-shadow: -2px 2px 6px gray">
+                Review:</span><br>
+            <textarea rows="5" col="30" id="bodyText" placeholder="Your review"></textarea><br>
+            <hr>
+            <input type="button" id="addComent" value="Add Comment" />
+        </div>
+
+        <div id='container'></div>
+
+    </div>
+    <div class="bor3">
+        <table border="3">
+
+            <caption style="text-align: center; color: black; width: bolder; font-size: 20px; font-family:serif">
+                <strong style="font-family:'New Walt Disney Font', sans-serif;  font-size: 90px;"> Tangled </strong>
+            </caption>
+
+            <tbody>
+                <tr>
+                    <td><span style="position: relative ; left: 2%"><img
+                                src="https://m.media-amazon.com/images/I/81G6xX1AlxL._AC_SL1500_.jpg" width="300"
+                                height="400" alt="Click me to i can move you to the movies page "></span></td>
+                    <th>
+                        <p style="text-align: center">Trailer :<br> <a href="https://youtu.be/TbQm5doF_Uc"
+                                target="_blank"><img src="Posters/Trailer.png" width="190" height="200"
+                                    alt="Click it to go to the trailer"></a> </p>
+                        <hr><span style="text-align: left; font-size: 12px"> Description:
+                            <hr>Tangled is a 2010 American 3D computer-animated musical adventure fantasy comedy film[2]
+                            produced by Walt Disney Animation Studios and released by Walt Disney Pictures. Loosely
+                            based on the German fairy tale Rapunzel in the collection of folk tales published by the
+                            Brothers Grimm, it is the 50th Disney animated feature film. The film was directed by Nathan
+                            Greno and Byron Howard (in the former's feature directorial debut) and produced by Roy
+                            Conli, from a screenplay written by Dan Fogelman. Featuring the voices of Mandy Moore,
+                            Zachary Levi, and Donna Murphy,[7] Tangled tells the story of Rapunzel, a lost young
+                            princess with magical long blonde hair who yearns to leave her secluded tower. She accepts
+                            the aid of an intruder to take her out into the world which she has never seen.
+                        </span>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th colspan="2"> Release year: 2018 .</th>
+                </tr>
+                <tr>
+                    <th colspan="2"> Film language: English , Korean .</th>
+                </tr>
+                <tr>
+                    <th colspan="2"> Category: Action , Sci-Fiction , Adventure .</th>
+                </tr>
+                <tr>
+                    <th colspan="2"> Duration: 134 Min .</th>
+                </tr>
+                <tr>
+                    <th colspan="2"> Film rating: 7.3 .</th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</body>
+<footer>
+    <hr>
+    <p
+        style="text-align: center; color: whitesmoke; font-family: monospace; font-size: 18px; font-weight: bold; font-style: italic; text-shadow: -2px 2px 3px whitesmoke;">
+        Created By Manal Altamimi&amp;<br> &amp;Mashael Aldawood&amp; <br> Lina Alyousef</p>
+
+</footer>
+
+</html>
